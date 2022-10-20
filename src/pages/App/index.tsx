@@ -122,7 +122,7 @@ useEffect(()=> {
         </Container>
       </Navbar>
 
-      <div className={styles.name}>Obs: atualize a página para que seu parceiro veja o video</div>
+      <div className={styles.name}>Dica: seu parceiro terá que atualizar a página para ver o mesmo video que você!</div>
     
     <div className={styles.container}>
       
