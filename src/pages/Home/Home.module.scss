@@ -1,0 +1,49 @@
+@import "../../styles/variaveis";
+
+body{
+    background-color: #242536;
+   
+}
+
+.container{
+    
+}
+
+
+
+.button{
+    margin-top: 15%;
+    margin-left: 45%;
+    margin-bottom: 5rem;
+    
+    padding: 30px;
+    padding-right: 50px;
+    padding-left: 50px;
+    display: flex;
+    align-items: center;
+    color: black;
+    font-size: 25px;
+    font-weight: 600;
+    border-radius: 5px;
+    
+      
+
+}
+
+.closeModal{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: white;
+    padding: 0.5px;
+    padding-left: 4px;
+    padding-right: 4px;
+    border-radius: 5px;
+
+}
+
+.modalInput{
+    padding: 8px;
+    border-radius: 5px;
+    margin-right: 10px
+}

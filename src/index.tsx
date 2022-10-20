@@ -1,14 +1,17 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
+import './index.scss';
+import ReactDOM from 'react-dom';
+import 'normalize.css';
+import Router from './routes';
 
 
-const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
+
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
+    <Router/>
+  </React.StrictMode>,
+  document.getElementById('root')
+
 );

@@ -1,0 +1,87 @@
+@import "../../styles/variaveis";
+@import "../../styles/breakpoints";
+
+body{
+  background-color: #242536;
+  h1{
+    color: white;
+  }
+
+}
+
+.name{
+  color:white;
+  margin-left: 10%;
+  margin-top: 1%;
+
+}
+input:focus {
+    outline: none;
+}
+
+.container{
+  margin-top: 2rem;
+  display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  ;
+    .button{
+      position: absolute;
+      background-color: $grey;
+      margin-left: 10px;
+      height: 42px;
+      width: 42px;
+      border-radius: 5px;
+      border: 2.5px solid #6f6f77;
+      padding-top: 5px;
+      outline-width: 0;
+
+      
+    }
+
+    
+
+    
+}
+
+.buscador {
+    align-items: center;
+    background-color: $grey;
+    border-radius: 5px;
+    
+      border: 2.5px solid #6f6f77;
+    font-size: 1.5rem;
+    font-weight: 600;
+    height: 42px;
+   
+    padding: 0 15px;
+    width: 400px;
+    @media (max-width: $mobile) {
+      flex-direction: row;
+      font-size: 1.5rem;
+      width: 90%;
+      box-sizing: border-box;
+  
+      
+      
+    }
+
+    margin-bottom: 50%
+
+
+    
+  }
+
+  .noVideo{
+    color: white;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .navBar{
+    display: flex;
+    justify-content: space-between;
+  }
