@@ -22,7 +22,7 @@ react-icons(para adicionar um icone na aplicação)
 Copie o projeto e para baixar as dependências use o npm i
 
 
-### Usage
+### Execução
 
 Para rodar o json server que simula o back-end use o comando npm run server
 
