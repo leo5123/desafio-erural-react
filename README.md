@@ -7,7 +7,7 @@
 
 
 ## Informação geral
- Bem vindo ao desafio erural, esse é um site para assistir videos do youtube com amigos.
+ Bem vindo ao desafio erural, esse é um site feito para você assistir videos do youtube com amigos.
 
 	
 ## Dependências
