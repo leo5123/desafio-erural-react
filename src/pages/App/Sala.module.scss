@@ -13,7 +13,6 @@ body{
   color:white;
   margin-left: 10%;
   margin-top: 1%;
-
 }
 input:focus {
     outline: none;
@@ -35,26 +34,18 @@ input:focus {
       border-radius: 5px;
       border: 2.5px solid #6f6f77;
       padding-top: 5px;
-      outline-width: 0;
-
-      
+      outline-width: 0; 
     }
-
-    
-
-    
 }
 
 .buscador {
     align-items: center;
     background-color: $grey;
     border-radius: 5px;
-    
-      border: 2.5px solid #6f6f77;
+    border: 2.5px solid #6f6f77;
     font-size: 1.5rem;
     font-weight: 600;
     height: 42px;
-   
     padding: 0 15px;
     width: 400px;
     @media (max-width: $mobile) {
@@ -62,15 +53,8 @@ input:focus {
       font-size: 1.5rem;
       width: 90%;
       box-sizing: border-box;
-  
-      
-      
     }
-
     margin-bottom: 50%
-
-
-    
   }
 
   .noVideo{

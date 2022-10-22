@@ -6,13 +6,10 @@ export default function NotFound(){
     const navigate = useNavigate();
     return(
         <div className={styles.container}>
-            Página não encontrada...
-        
+            Página não encontrada...  
             <button
                 onClick={()=> navigate(-1) }
             >{'< Voltar'}</button>
         </div>
     );
-
-
 }

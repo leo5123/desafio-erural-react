@@ -5,17 +5,12 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 
-
-
 import YoutubeEmbed from './YoutubeEmbed/YoutubeEmbed';
 import getYouTubeID from 'get-youtube-id';
 import styles from './Sala.module.scss';
 
-
-
 export default function Sala( ) {
   
-
     const [link, setLink] = useState('');
     const [idVideo, setIdVideo] = useState<string | null>('');
     const [nameRoom, setNameRoom] = useState('');
@@ -26,23 +21,18 @@ export default function Sala( ) {
 
     function handleSubmit(e: any){
         e.preventDefault();
-    
         handleSetYoutubeId(link);
-        handleUpdateLinkVideo();
-    
+        handleUpdateLinkVideo();    
     }
 
     function handleSetYoutubeId(newLink: any) {
         if (newLink == '') {
             setIdVideo('');
         } else {
-
             const ytId = getYouTubeID(newLink, { fuzzy: false });
             setIdVideo(ytId);
         }
-
     }
-
 
     async function handleUpdateLinkVideo(){
 
@@ -63,9 +53,6 @@ export default function Sala( ) {
 
     async function getLinkVideo() {
 
-
-        
-
         await fetch(`${API}/${params.id}`).then((response) => {
             return response.json();
         })
@@ -82,56 +69,34 @@ export default function Sala( ) {
                     handleSetYoutubeId(selectedRoom.link); 
                     setNameRoom(selectedRoom.room);
                 }, 200);
-
                 console.log(selectedRoom.link);
-
-        
-
             });
 
     }
-
-
 
     /**
  * Esse useEffect só irá ser executado quando o usuário entrar na sala.
  * 
  */
     useEffect(()=> {
-
         getLinkVideo();
- 
     },[]);
-
 
     return (
         <>
-    
             <Navbar bg="dark" variant="dark">
                 <Container>
-          
                     <Nav >
                         <Nav.Link style={{color: 'white'}} onClick={() => navigate('/')}>Home</Nav.Link>
                         <Nav.Link style={{color: 'white'}} onClick={() => window.location.reload()}>Atualizar</Nav.Link>
-            
                     </Nav>
                 </Container>
             </Navbar>
 
-      
-    
             <div className={styles.container}>
-      
-
-      
-
                 <h1>Sala: {nameRoom}</h1>
-
                 <h1 >eRural</h1>
-      
-      
                 <form onSubmit={handleSubmit}>
-      
                     <input 
                         type="text" 
                         id="insertVideo"
@@ -140,18 +105,17 @@ export default function Sala( ) {
                         className={styles.buscador}
                         placeholder='Insira um link do youtube!'
                     />
-
-                    <button type="submit" className={styles.button}><HiMagnifyingGlass size={25} /></button>
+                    <button 
+                        type="submit" 
+                        className={styles.button}><HiMagnifyingGlass size={25} 
+                        />
+                    </button>
                 </form>
       
-      
-
             </div>
             {link == '' ? <div className={styles.noVideo}>Sala sem video</div> :
-        
                 <YoutubeEmbed
                     embedId={idVideo === '' ? '' : idVideo} 
-       
                 />}
         </>
     );

@@ -1,12 +1,9 @@
 import Modal from 'react-modal';
-
 import Button from 'react-bootstrap/Button';
-
 import styles from './Home.module.scss';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import TableRoom from './Table';
-
 
 const customStyles = {
     content: {
@@ -22,36 +19,30 @@ const customStyles = {
     },
 };
 
-  
-
-export default function Home (){
-  
-    const navigate = useNavigate();
-
-    let subtitle:any;
-    const [modalIsOpen, setIsOpen] = React.useState(false);
-    const [room, setRoom] = useState('');
-    
-    const [link, setLink] = useState('');
+export default function Home() {
 
     const API = 'http://localhost:4004';
-  
+    const navigate = useNavigate();
+    let subtitle: any;
+
+    const [modalIsOpen, setIsOpen] = React.useState(false);
+    const [room, setRoom] = useState('');
+    const [link, setLink] = useState('');
+
     function openModal() {
         setIsOpen(true);
     }
-  
+
     function afterOpenModal() {
         // references are now sync'd and can be accessed.
         subtitle.style.color = 'white';
     }
-  
+
     function closeModal() {
         setIsOpen(false);
     }
 
-    
-
-    async function handleSubmit (e: any)  {
+    async function handleSubmit(e: any) {
         e.preventDefault();
 
         const newRoom = {
@@ -73,17 +64,13 @@ export default function Home (){
         setLink('');
         setRoom('');
     }
-   
-    
 
     return (
-      
+
         <div className={styles.container}>
-            
             <Button onClick={openModal} className={styles.button} variant="warning">Criar sala</Button>
             <div>
-
-                <TableRoom/>
+                <TableRoom />
                 <Modal
                     isOpen={modalIsOpen}
                     onAfterOpen={afterOpenModal}
@@ -91,41 +78,27 @@ export default function Home (){
                     style={customStyles}
                     contentLabel="Example Modal"
                 >
-
                     <div className={styles.modalRow}>
                         <Button onClick={closeModal} aria-label="fechar" className={styles.closeModal} variant="danger">X</Button>
-          
+
                         <h2 ref={(_subtitle) => (subtitle = _subtitle)}>Qual é o nome sua sala?</h2>
                     </div>
-        
-        
-                    <label htmlFor='nomeSala'>Sala:</label> 
-        
+
+                    <label htmlFor='nomeSala'>Sala:</label>
                     <form onSubmit={handleSubmit}>
-            
-
-
-                        <input 
-                            type='text' 
-                            id='nomeSala' 
-                            onChange={(e) => setRoom(e.target.value)} 
+                        <input
+                            type='text'
+                            id='nomeSala'
+                            onChange={(e) => setRoom(e.target.value)}
                             placeholder='Digite o nome da sua sala'
                             value={room || ''}
                             required
                             className={styles.modalInput}
                         />
-          
-          
-          
                         <Button type='submit' variant="info">Criar</Button>
-          
                     </form>
-          
-        
                 </Modal>
             </div>
-
-
         </div>
     );
 }
