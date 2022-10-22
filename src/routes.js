@@ -1,7 +1,7 @@
-import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import Sala from './pages/App'
-import Home from './pages/Home'
-import NotFound from './pages/NotFound'
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom';
+import Sala from './pages/App';
+import Home from './pages/Home';
+import NotFound from './pages/NotFound';
 
 export default function AppRouter (){
     return(
@@ -12,5 +12,5 @@ export default function AppRouter (){
                 <Route path='*' element={<NotFound/>}/>
             </Routes>
         </Router>
-    )
+    );
 }

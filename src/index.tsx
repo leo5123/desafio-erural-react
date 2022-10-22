@@ -1,4 +1,4 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
 import './index.scss';
 import ReactDOM from 'react-dom';
@@ -9,9 +9,9 @@ import Router from './routes';
 
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Router/>
-  </React.StrictMode>,
-  document.getElementById('root')
+    <React.StrictMode>
+        <Router/>
+    </React.StrictMode>,
+    document.getElementById('root')
 
 );
